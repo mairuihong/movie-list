@@ -1,0 +1,8 @@
+<view class='profile'>
+  <view class="profile-img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="profile-name"></open-data>
+</view>
+<button class="get-userInfo" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+<view class="userName" wx:if="{{userName}}">微信名：{{userName}}</view>

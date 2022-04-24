@@ -1,0 +1,32 @@
+.movie {
+    height: 340rpx;
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+.movie-img {
+    width: 220rpx;
+    height: 100%;
+}
+.movie-info {
+    flex: 1;
+    padding: 0 12rpx 0 8rpx;
+}
+.movie-title{
+    color: #666666;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+.movie-detail {
+    color: #666666;
+}
+.movie-score {
+    color: #faaf00;
+}
+.movie-commit {
+    height: 60rpx;
+    background: #1296db;
+    color: #fff;
+    font-weight: 500;
+    margin-top:126rpx;
+}

@@ -1,0 +1,60 @@
+<view class=''>
+    <!-- 电影详情 -->
+    <view class='detail-container' style='background: url({{detail.cover.image.large.url}}) no-repeat  top/cover'></view>
+    <view class='detail-mask'></view>
+    <view class='detail-info'>
+        <image src="{{detail.cover.image.normal.url}}" class='detail-img'></image>
+        <view class='detail'>
+            <view class='detail-nm'>{{detail.title}}</view>
+            <view>{{detail.aka[0]}}</view>
+            <view class='detail.sc'>{{detail.rating.value ? detail.rating.value : '暂无评'}}分</view>
+            <view>{{detail.countries[0]}}</view>
+            <view>导演：{{detail.directors[0].name}}</view>
+        </view>
+    </view>
+    <view class='desc'>{{detail.intro}}</view>
+    <!-- 评价 -->
+    <view class="comment-container margin-top">
+        <view class="title">写评价</view>
+        <view class="rate">
+            评分：
+            <van-rate color="#ffd21e" touchable="ture" value="{{ score }}" bind:change="onScoreChange" />
+        </view>
+        <van-field value="{{ content }}" placeholder="写评语" bind:change="onContentChange" />
+        <view class="margin-top">
+            <van-button size="normal" type="warning" bindtap="chooseImg" block>上传图片</van-button>
+        </view>
+        <view class="margin-top comment-images">
+            <image class="comment-img" src="{{item}}" wx:for="{{images}}" wx:key="index"></image>
+        </view>
+        <view class="margin-top">
+            <view wx:if="{{ oldComment[0] }}">
+                <van-button size="large" type="info" bindtap="updateComment" block>更改评价</van-button>
+            </view>
+            <view wx:else>
+                <van-button size="large" type="info" bindtap="submit" block>提交评价</van-button>
+            </view>
+        </view>
+    </view>
+    <!-- 历史评价 -->
+    <view class="old-comment-containe margin-top">
+        <view wx:if="{{oldComment[0]}}">
+            <view class="title">历史评价</view>
+            <view class="rate">
+                评分：
+                <van-rate color="#ffd21e" readonly="ture" value="{{ oldComment[0].score }}" />
+            </view>
+            <van-field readonly="ture" value="{{ oldComment[0].content}}" placeholder="暂无评语" />
+            <view class="margin-top">
+                <view>已上传图片</view>
+                <image class="comment-img" src="{{item}}" wx:for="{{oldComment[0].fileIds}}" wx:key="index"></image>
+            </view>
+            <view class="margin-top">
+                <van-button size="normal" type="danger" bindtap="deleteComment" block>删除评价</van-button>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="title">暂无历史评价</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,1 @@
+"D:\QianduanRuanjian\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-6gj7pnb797c1ccb1 --n quickstartFunctions --r --project "H:\前端\学习笔记\慕课网-轻松入门微信小程序与云开发\movie-list" --report_first --report
